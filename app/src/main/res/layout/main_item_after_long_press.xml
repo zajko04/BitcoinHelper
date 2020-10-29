@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:orientation="vertical"
+    android:layout_weight="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:translationZ="90dp">
+        <RelativeLayout
+            android:id="@+id/cancel"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/radius_cancel"
+            android:foreground="@drawable/ripple_cancel">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/cancel"
+                android:textSize="25sp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+    android:id="@+id/delete"
+    android:layout_width="100dp"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/radius_delete"
+    android:foreground="@drawable/ripple_delete">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/delete"
+            android:textSize="25sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/modify"
+        android:layout_width="100dp"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_toRightOf="@+id/delete"
+        android:background="@drawable/radius_modify">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/modify"
+            android:textSize="25sp"/>
+    </RelativeLayout>
+</RelativeLayout>

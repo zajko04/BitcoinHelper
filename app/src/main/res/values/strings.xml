@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">BitcoinHelper</string>
+    <string name="place_holder">Place Holder</string>
+    <string name="who">Kto?</string>
+    <string name="cashIn">Ile zł ?</string>
+    <string name="btcExchange">Kurs BTC podczas kupna [€]</string>
+    <string name="btcQuantity">Ilośc kupionych BTC</string>
+    <string name="dialogTitle">Dodaj pole</string>
+    <string name="cancel">Anuluj</string>
+    <string name="add">Dodaj</string>
+    <string name="addField">Dodaj pole</string>
+    <string name="currentPrice">Ile zyksuje/traci: </string>
+    <string name="currentExchange">"Obecny kurs bitcoin: "</string>
+    <string name="delete">Usuń</string>
+    <string name="modify">Zmień</string>
+    <string name="loading">Ładuję</string>
+    <string name="areYouSure">Jesteś pewny?</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+    <string name="currency"> zł</string>
+    <string name="statistics">Statystki</string>
+</resources>

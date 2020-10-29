@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:orientation="vertical"
+    android:background="@drawable/radius"
+    android:foreground="@drawable/ripple"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/who"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:text="@string/place_holder"
+        android:layout_marginHorizontal="18dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/cashIn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@+id/who"
+        android:text="@string/place_holder"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="18dp"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/btcExchange"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@+id/cashIn"
+        android:text="@string/place_holder"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="18dp"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/btcQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@+id/btcExchange"
+        android:text="@string/place_holder"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="18dp"
+        android:textSize="25sp"/>
+    <TextView
+        android:id="@+id/currentPrice"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@+id/btcQuantity"
+        android:text="@string/place_holder"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="18dp"
+        android:textSize="25sp"/>
+</RelativeLayout>
