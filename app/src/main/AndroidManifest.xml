@@ -11,14 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".statistics.StatisticsActivity"></activity>
-        <activity android:name=".mainscreen.MainActivity">
+        <activity android:name=".OpenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".statistics.StatisticsActivity" />
+        <activity android:name=".mainscreen.MainActivity"/>
     </application>
 
 </manifest>
