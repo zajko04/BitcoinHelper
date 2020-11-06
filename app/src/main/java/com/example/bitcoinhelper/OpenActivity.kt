@@ -7,7 +7,7 @@ import android.os.CountDownTimer
 import com.example.bitcoinhelper.mainscreen.MainActivity
 import com.example.bitcoinhelper.statistics.StatisticsActivity
 
-class OpenActivity : AppCompatActivity() {
+class OpenActivity : MyAppCompatActivity() {
 
     private val context = this
 

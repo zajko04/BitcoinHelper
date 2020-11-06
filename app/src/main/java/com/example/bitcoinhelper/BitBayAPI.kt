@@ -18,13 +18,12 @@ import java.util.concurrent.atomic.AtomicReference
 
 class BitBayAPI {
 
-    private val TAG = "BitBayAPI"
-
+    private var timer: Timer? = null
     @Volatile
     private var mLastTickerResponse = AtomicReference(TickerResponse())
 
     companion object {
-
+        private const val TAG = "BitBayAPI"
         @Volatile
         private var INSTANCE: BitBayAPI? = null
 
@@ -39,6 +38,11 @@ class BitBayAPI {
                 INSTANCE = instance
                 return instance
             }
+        }
+
+        fun stop() {
+            INSTANCE?.stopUpdate()
+            INSTANCE = null
         }
     }
 
@@ -119,12 +123,19 @@ class BitBayAPI {
     private fun runUpdate() {
         val scope = CoroutineScope(Executors.newSingleThreadExecutor().asCoroutineDispatcher())
         scope.launch {
-            Timer().scheduleAtFixedRate(object : TimerTask() {
+            if(timer == null) timer = Timer()
+            timer?.scheduleAtFixedRate(object : TimerTask() {
                 override fun run() {
                     loadTicker()
                 }
             }, 0, 3000)
         }
+    }
+
+    private fun stopUpdate() {
+        timer?.cancel()
+        timer?.purge()
+        timer = null
     }
 
     private fun loadTicker() {

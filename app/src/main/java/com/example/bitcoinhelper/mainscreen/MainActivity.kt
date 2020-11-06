@@ -16,13 +16,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bitcoinhelper.BitBayAPI
+import com.example.bitcoinhelper.MyAppCompatActivity
 import com.example.bitcoinhelper.R
 import com.example.bitcoinhelper.statistics.StatisticsActivity
 import kotlinx.coroutines.*
 import java.util.*
 import java.util.concurrent.Executors
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : MyAppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: MainRecyclerViewAdapter

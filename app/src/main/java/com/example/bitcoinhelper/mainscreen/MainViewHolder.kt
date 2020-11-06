@@ -48,7 +48,7 @@ class MainViewHolder(itemView: View, private val mParent: ViewGroup) :
             var helpArg = 0
             mTimer?.scheduleAtFixedRate(object : TimerTask() {
                 override fun run() {
-                    Log.d(TAG, "$btcQuantity  $cashIn")
+                    //Log.d(TAG, "$btcQuantity  $cashIn")
                     val result = BitBayAPI.getInstance().getCurrentProfit(
                         btcQuantity,
                         cashIn,

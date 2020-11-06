@@ -8,11 +8,12 @@ import android.view.MotionEvent
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bitcoinhelper.MyAppCompatActivity
 import com.example.bitcoinhelper.R
 import com.example.bitcoinhelper.mainscreen.CashEntityViewModel
 import com.example.bitcoinhelper.mainscreen.MainActivity
 
-class StatisticsActivity : AppCompatActivity() {
+class StatisticsActivity : MyAppCompatActivity() {
 
     private var x1 = 0F
     private var x2 = 0F
