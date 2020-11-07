@@ -21,6 +21,7 @@ class MainRecyclerViewAdapter(
 
     private val TAG = "MainRecyclerViewAdapter"
     private var itemsList = ArrayList<Item>()
+    private var profitList = ArrayList<String>()
     private var currentLongPressedPosition = -1
 
     override fun getItemViewType(position: Int): Int =
@@ -41,7 +42,6 @@ class MainRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         holder.itemView.setOnLongClickListener{
-            (holder as MainViewHolder).stopTimer()
             currentLongPressedPosition = position
             notifyDataSetChanged()
             true
@@ -86,6 +86,11 @@ class MainRecyclerViewAdapter(
 
         if (holder is MainViewHolder) {
             holder.setUp(itemsList[position].cashEntity)
+            try {
+                holder.setProfit(profitList[position])
+            } catch (e : IndexOutOfBoundsException) {
+                holder.setProfit("Loading...")
+            }
         }
     }
 
@@ -95,6 +100,14 @@ class MainRecyclerViewAdapter(
         itemsList.clear()
         for(item in items) {
             itemsList.add(Item(item, ViewType.MAIN))
+        }
+        notifyDataSetChanged()
+    }
+
+    internal fun setProfits(items: List<String>) {
+        profitList.clear()
+        for(profit in items) {
+            profitList.add(profit)
         }
         notifyDataSetChanged()
     }

@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bitcoinhelper.BitBayAPI
 import com.example.bitcoinhelper.R
+import com.example.bitcoinhelper.apis.BitcoinInfoAPIWrapper
 import com.example.bitcoinhelper.database.CashEntity
 import kotlinx.coroutines.*
 import java.util.*
@@ -100,7 +100,7 @@ class StatisticsRecyclerViewAdapter :
             val loading = itemView.context.getString(R.string.loading)
             timer?.scheduleAtFixedRate(object : TimerTask() {
                 override fun run() {
-                    val result = BitBayAPI
+                    val result = BitcoinInfoAPIWrapper
                         .getInstance()
                         .getCurrentSellPrice(helpArg, itemView.context, btcQuantity)
 

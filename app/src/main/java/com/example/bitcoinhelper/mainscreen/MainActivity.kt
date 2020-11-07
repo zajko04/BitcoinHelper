@@ -10,14 +10,12 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bitcoinhelper.BitBayAPI
 import com.example.bitcoinhelper.MyAppCompatActivity
 import com.example.bitcoinhelper.R
+import com.example.bitcoinhelper.apis.BitcoinInfoAPIWrapper
 import com.example.bitcoinhelper.statistics.StatisticsActivity
 import kotlinx.coroutines.*
 import java.util.*
@@ -48,6 +46,10 @@ class MainActivity : MyAppCompatActivity() {
         cashEntityViewModel = ViewModelProvider(this).get(CashEntityViewModel::class.java)
         cashEntityViewModel.allCash.observe(this, { cash ->
             cash?.let { viewAdapter.setItems(it) }
+        })
+
+        cashEntityViewModel.allProfit.observe(this, { profit ->
+            profit?.let { viewAdapter.setProfits(it) }
         })
 
         viewManager = GridLayoutManager(this, 1)
@@ -89,7 +91,7 @@ class MainActivity : MyAppCompatActivity() {
         var helpArg = 0
         timer?.scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
-                val result = BitBayAPI.getInstance().getCurrentSellPrice(helpArg, context)
+                val result = BitcoinInfoAPIWrapper.getInstance().getCurrentSellPrice(helpArg, context)
                 runOnUiThread {
                     currentPriceBTC.text = result
                 }
