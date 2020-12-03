@@ -77,19 +77,11 @@ class CashEntityViewModel(application: Application) : AndroidViewModel(applicati
         mRepository.delete(cash)
     }
 
-    private class MyLifeCycleOwner() : LifecycleOwner {
+    private class MyLifeCycleOwner : LifecycleOwner {
 
         private val lifecycleRegistry: LifecycleRegistry = LifecycleRegistry(this)
 
         init {
-            lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_START)
-        }
-
-        fun stopListening() {
-            lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_STOP)
-        }
-
-        fun startListening() {
             lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_START)
         }
 

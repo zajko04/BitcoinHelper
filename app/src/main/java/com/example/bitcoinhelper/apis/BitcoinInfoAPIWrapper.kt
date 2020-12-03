@@ -18,7 +18,7 @@ class BitcoinInfoAPIWrapper {
             }
         }
 
-        fun getInstance() : API{
+        fun getInstance() : API {
             if (api == null && type != null) {
                 initialize(type!!)
             }
